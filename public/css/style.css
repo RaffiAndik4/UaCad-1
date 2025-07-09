@@ -1,0 +1,183 @@
+/* Import Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap');
+
+:root {
+    --uacad-yellow: #FFD440;
+    --uacad-dark: #202430;
+    --uacad-light-gray: #f8f9fa;
+    --uacad-gray: #e9ecef;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: var(--uacad-dark);
+}
+
+/* public/css/style.css */
+
+/* Pastikan Anda memiliki bagian ini untuk Navbar */
+.navbar {
+    background-color: #ffffff !important; /* Paksa latar belakang jadi putih */
+    border-bottom: 1px solid #e9ecef;     /* Garis bawah tipis abu-abu */
+}
+
+/* Atur warna teks untuk brand/logo */
+.navbar .navbar-brand {
+    color: #202430 !important; /* Paksa warna teks logo jadi gelap */
+    font-weight: 700;
+}
+
+/* Atur warna teks untuk link navigasi */
+.navbar .nav-link {
+    color: #202430 !important; /* Paksa warna teks link jadi gelap */
+}
+
+/* (Opsional) Beri warna berbeda saat kursor mouse di atas link */
+.navbar .nav-link:hover {
+    color: #0d6efd !important; /* Warna biru saat hover */
+}
+/* public/css/style.css */
+
+/* public/css/style.css */
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(32, 36, 48, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Warna Gelap */
+}
+
+.navbar-toggler {
+  border-color: rgba(32, 36, 48, 0.1); /* Border tipis warna gelap */
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(32, 36, 48, 0.2); /* Efek focus warna gelap */
+}
+/* public/css/style.css */
+
+/* ... CSS lain Anda ... */
+
+.navbar .nav-item .nav-link svg {
+    margin-right: 0.3em; /* Sedikit ruang di kanan ikon (jika ada teks di sampingnya) */
+    vertical-align: middle; /* Agar ikon sejajar dengan teks */
+}
+
+.navbar .navbar-brand {
+    font-size: 1.5em; /* Ukuran font logo */
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.user-profile .user-name {
+    font-weight: 700;
+}
+.user-profile .user-role {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* Homepage Container */
+.homepage {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/* Hero Section */
+.bg-warning-custom {
+    background-color: var(--uacad-yellow) !important;
+}
+.text-warning-custom {
+    color: var(--uacad-yellow) !important;
+}
+.hero-section {
+    border: none;
+}
+.hero-section .btn-dark {
+    background-color: var(--uacad-dark);
+    padding: 12px 30px;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2.5rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+.highlight-yellow {
+    background-color: var(--uacad-yellow);
+    padding: 0 10px;
+}
+
+/* Event Card */
+.event-card {
+    border: 1px solid var(--uacad-gray);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.card-img-container {
+    position: relative;
+}
+.card-img-top {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+.category-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+.event-card .card-title {
+    font-size: 1.1rem;
+    flex-grow: 1; /* Membuat title mengisi ruang agar tombol selalu di bawah */
+}
+.btn-custom-dark {
+    background-color: var(--uacad-dark);
+    color: white;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-weight: 700;
+    width: 100%;
+}
+.btn-custom-dark:hover {
+    background-color: #3e4452;
+    color: white;
+}
+.btn-custom-yellow {
+    background-color: var(--uacad-yellow);
+    color: var(--uacad-dark);
+    border-radius: 8px;
+    padding: 10px 0;
+    font-weight: 700;
+    width: 100%;
+}
+.btn-custom-yellow:hover {
+    background-color: #e9be3a;
+    color: var(--uacad-dark);
+}
+
+/* Event Tabs */
+.event-tabs .nav-link {
+    color: #6c757d;
+    font-weight: 700;
+    background-color: var(--uacad-gray);
+    margin-right: 10px;
+    border-radius: 0.5rem;
+}
+.event-tabs .nav-link.active {
+    background-color: var(--uacad-dark);
+    color: white;
+}

@@ -1,0 +1,360 @@
+/* ===================================================================
+   CSS Lengkap untuk Dashboard & Halaman Terkait (UACAD)
+   =================================================================== */
+
+/* Import Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* == Variabel Global == */
+:root {
+    --uacad-yellow: #FFD440;
+    --uacad-dark: #202430;
+    --uacad-light-gray: #F5F5F7;
+    --uacad-white: #FFFFFF;
+    --uacad-border-color: #EAEAEA;
+    --uacad-text-muted: #6c757d;
+}
+
+/* == Gaya Dasar == */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--uacad-light-gray);
+    color: var(--uacad-dark);
+}
+
+/* == Sidebar (Tampilan Desktop) == */
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    min-height: 100vh;
+    background-color: var(--uacad-yellow);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar-logo {
+    font-weight: 700;
+    color: var(--uacad-dark);
+    margin-bottom: 2.5rem;
+    font-size: 1.8rem;
+}
+
+.sidebar-nav .nav-item {
+    margin-bottom: 0.5rem;
+}
+
+/* Pastikan style .sidebar-nav .nav-link seperti ini */
+.sidebar-nav .nav-link {
+    color: var(--uacad-dark);
+    font-weight: 500;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Memberi jarak antara ikon dan teks */
+    transition: all 0.2s ease-in-out; /* Transisi halus untuk semua properti */
+}
+
+/* Style untuk ikon di dalam link navigasi */
+.sidebar-nav .nav-link .nav-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0; /* Mencegah ikon menyusut */
+    fill: var(--uacad-dark); /* Warna ikon mengikuti warna teks */
+    transition: fill 0.2s ease-in-out;
+}
+
+/* Efek saat kursor di atas link */
+.sidebar-nav .nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Style untuk link yang sedang aktif */
+.sidebar-nav .nav-link.active {
+    background-color: var(--uacad-white);
+    color: var(--uacad-dark);
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Mengubah warna ikon menjadi kuning saat link aktif */
+.sidebar-nav .nav-link.active .nav-icon {
+    fill: var(--uacad-yellow);
+}
+
+
+/* Style untuk bagian profil pengguna di bawah */
+.user-profile-bottom {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Jarak antar elemen di profil */
+    padding-top: 1rem;
+    margin-top: auto; /* Mendorong profil ke paling bawah */
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.user-profile-bottom img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-profile-bottom .user-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Mendorong ikon aksi ke kanan */
+}
+
+.user-profile-bottom .user-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.user-profile-bottom .user-role {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.user-profile-bottom .user-actions {
+    display: flex;
+    gap: 0.5rem; /* Jarak antar ikon setting & logout */
+}
+
+.user-profile-bottom .user-actions a {
+    color: var(--uacad-dark);
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.user-profile-bottom .user-actions a:hover {
+    opacity: 1;
+}
+
+.user-profile-bottom .user-actions svg {
+    width: 22px;
+    height: 22px;
+}
+
+
+/* == Konten Utama == */
+.main-content {
+    flex-grow: 1;
+    padding: 2rem 3rem;
+    position: relative;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.content-header h2 {
+    font-weight: 700;
+}
+.content-header .header-icon {
+    color: var(--uacad-dark);
+    margin-left: 1.5rem;
+}
+.content-header .header-icon svg {
+    width: 24px;
+    height: 24px;
+}
+.section-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+/* == Komponen Spesifik == */
+
+/* Kartu Acara Kecil */
+.event-carousel {
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+.event-carousel::-webkit-scrollbar { height: 8px; }
+.event-carousel::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+
+.event-card-sm {
+    min-width: 250px;
+    border: 1px solid var(--uacad-border-color);
+    border-left: 5px solid var(--uacad-yellow);
+    border-radius: 0.75rem;
+    box-shadow: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.event-card-sm:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.event-card-sm .card-body { padding: 1rem; }
+.event-card-sm .card-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    color: var(--uacad-dark);
+}
+.event-card-sm .card-text {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--uacad-text-muted);
+}
+.event-card-sm .icon-sm {
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+    fill: currentColor;
+}
+.event-card-sm .btn { font-weight: 600; padding: 0.5rem 0; }
+
+/* Widget Umum */
+.widget-card {
+    background-color: var(--uacad-white);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--uacad-border-color);
+    height: 100%;
+}
+.placeholder-widget { min-height: 150px; }
+
+/* Widget Kalender */
+.calendar-widget .calendar-header {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    text-align: center;
+}
+.calendar-grid .day-name {
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--uacad-text-muted);
+}
+.calendar-grid .calendar-day {
+    padding: 0.5rem;
+    font-weight: 500;
+    border-radius: 50%;
+}
+.calendar-grid .calendar-day.other-month { color: #ced4da; }
+.calendar-grid .calendar-day.today {
+    background-color: var(--uacad-dark);
+    color: var(--uacad-white);
+}
+
+/* Tabs Kustom (Halaman Jadwal) */
+.custom-tabs {
+    border-bottom: 2px solid var(--uacad-border-color);
+    display: flex;
+    gap: 1.5rem;
+}
+.custom-tabs .tab-item {
+    text-decoration: none;
+    color: var(--uacad-text-muted);
+    padding: 0.5rem 0.25rem;
+    font-weight: 600;
+    position: relative;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s ease;
+}
+.custom-tabs .tab-item:hover { color: var(--uacad-dark); }
+.custom-tabs .tab-item.active {
+    color: var(--uacad-dark);
+    border-bottom-color: var(--uacad-dark);
+}
+
+/* Daftar Agenda (Halaman Jadwal) */
+.agenda-list {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+.agenda-list::-webkit-scrollbar { width: 6px; }
+.agenda-list::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+.agenda-list .btn-primary { background-color: #0d6efd; border: none; }
+
+
+/* == GAYA RESPONSIVE == */
+.mobile-header { display: none; }
+
+/* Tampilan Tablet & Mobile (di bawah 992px) */
+@media (max-width: 991.98px) {
+    .sidebar {
+        position: fixed;
+        left: 0; top: 0;
+        z-index: 1030;
+        transform: translateX(-100%);
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 2rem 2.5rem;
+    }
+    
+    .mobile-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .sidebar-toggler {
+        background: none; border: none; padding: 0;
+        z-index: 1031;
+    }
+    
+    .mobile-logo {
+        font-weight: 700; font-size: 1.5rem;
+        margin: 0 auto;
+        transform: translateX(-14px);
+    }
+
+    body.sidebar-open::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1029;
+    }
+}
+
+/* Tampilan Mobile Kecil (di bawah 768px) */
+@media (max-width: 767.98px) {
+    .main-content {
+        padding: 1.5rem 1rem;
+    }
+    .content-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .content-header h2 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Tampilan Monitor Lebar (di atas 1600px) */
+@media (min-width: 1600px) {
+    .main-content .container-fluid {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
